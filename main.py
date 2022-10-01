@@ -51,6 +51,7 @@ def extract_xml_file(file_name):
 
 
 class RecordHandler(xml.sax.ContentHandler):
+    # This class does SAX XML parsing on the xml file and writes it to csv file      
     def __init__(self, csv_writer):
         self.records = []
         self.id = ''
@@ -105,6 +106,7 @@ class RecordHandler(xml.sax.ContentHandler):
             self.issr = content
 
 
+# main code block                    
 input_url = SRC_URL
 print("Fetching content from", input_url)
 open_url_data = request.urlopen(input_url)
